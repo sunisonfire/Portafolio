@@ -15,8 +15,8 @@ const entries = [
     folderName: 'Delicias del ayer',
     tabColor: '#6f1728',
     bgColor: '#6f1728',
-    photo: profilePic,
-    secondPhoto: 'https://images.unsplash.com/photo-1498622205843-0b046036109f?auto=format&fit=crop&q=80&w=500',
+    photo: '/src/assets/images/pasteleria.webp',
+    secondPhoto: '/src/assets/images/postre.webp',
     noteTitle: 'Pequeñas Bendiciones',
     text: 'Una pastelería que desbloquea tus recuerdos con tan solo un mordisco. Cada sabor es un viaje a la infancia, a los días soleados y a las risas compartidas.',
     postit: 'Atrevete a probar algo nuevo hoy: un sabor que nunca antes habías considerado. La vida es demasiado corta para no explorar.',
@@ -29,8 +29,8 @@ const entries = [
     folderName: 'Happy Paws',
     tabColor: '#ead46b',
     bgColor: '#ead46b',
-    photo: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&q=80&w=500',
-    secondPhoto: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=500',
+    photo: '/src/assets/images/mascotas.jpg',
+    secondPhoto: '/src/assets/images/mascotas2.jpg',
     noteTitle: 'Un amigo peludo para cada corazón',
     text: '¡Cada patita merece ser feliz, ven y encuentra a tu compañero aquí!',
     postit: 'Nunca es suficiente:tu amigo peludo te amará cada vez más.',
@@ -43,8 +43,8 @@ const entries = [
     folderName: 'KidRoute',
     tabColor: '#a64c32',
     bgColor: '#a64c32',
-    photo: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&q=80&w=500',
-    secondPhoto: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=500',
+    photo: '/src/assets/images/transporte.jpg',
+    secondPhoto: '/src/assets/images/niños.jpg',
     noteTitle: 'Siempre seguro y protegido',
     text: 'No busques más, la solución para tu seguridad está justo aquí.',
     postit: 'Tu niño necesita seguridad, aquí siempre la tendrá.',
@@ -57,8 +57,8 @@ const entries = [
     folderName: 'PANDA',
     tabColor: '#431826',
     bgColor: '#431826',
-    photo: 'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80&w=500',
-    secondPhoto: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=500',
+    photo: '/src/assets/images/panda.jpg',
+    secondPhoto: '/src/assets/images/dinero.jpg',
     noteTitle: 'Tu coach financiero a la mano',
     text: 'Tus problemas financieros han llegado a su fin con tu nuevo coach virtual, PANDA. Aprende a ahorrar, invertir y gastar de manera inteligente con la ayuda de PANDA.',
     postit: 'Fin a tus problemas financieros: PANDA te guiará hacia un futuro más próspero y seguro.',
@@ -301,86 +301,70 @@ function renderAbout() {
 
       <div class="about-grid">
         <section>
-          <span class="eyebrow">Aesthetic Box</span>
+          <span class="eyebrow">Entre mis conocimientos estan...</span>
           <div class="object-case">
-            <h2 class="tin-title">Mis<br>conocimientos<br>.</h2>
+            <h2 class="tin-title">Mis<br>conocimientos<br></h2>
                         <div class="selfie-small">
-              <img src="/src/assets/images/lol.png" alt="Selfie">
+              <img src="/src/assets/images/yoagain.jpeg" alt="Selfie">
             </div>
             <div class="tin">
               <div class="tin-section">
 <div class="packaging">
     
     <div class="header">
-        <h1>
-            <span>graphic</span>
-            <span>designer</span>
-        </h1>
+
 
         <div class="tag">
-            starter pack
+            
         </div>
     </div>
 
-    <div class="blister">
-        <div class="icon affinity"></div>
-        <div class="icon photoshop"></div>
-        <div class="icon illustrator"></div>
-
-        <div class="icon figma"></div>
-        <div class="icon scribble"></div>
-        <div class="icon midjourney"></div>
-
-        <div class="icon dots"></div>
-        <div class="icon pixellab"></div>
-        <div class="icon canva"></div>
+<div class="blister">
+    <div class="icon affinity">
+        <img src="/src/assets/images/css.jpg" alt="css">
     </div>
 
+    <div class="icon photoshop">
+        <img src="/src/assets/images/html.jpg" alt="html">
+    </div>
+
+    <div class="icon illustrator">
+        <img src="/src/assets/images/python.jpg" alt="python">
+    </div>
+
+
+    <div class="icon dots">
+        <img src="/src/assets/images/js.jpg" alt="js">
+    </div>
+
+    <div class="icon pixellab">
+        <img src="/src/assets/images/git hub.jpg" alt="github">
+    </div>
+
+    <div class="icon canva">
+        <img src="/src/assets/images/python.jpg" alt="python">
+    </div>
+</div>
+
     <div class="sticker">
-        the apps
+        
     </div>
 
 </div>
           </div>
-          <div class="kitkat">Lenguajes</div>
+          <div class="kitkat">y más...
+          </div>
           </div>
             <div class="packaging">
     
-    <div class="header">
-        <h1>
-            <span>graphic</span>
-            <span>designer</span>
-        </h1>
 
-        <div class="tag">
-            starter pack
-        </div>
-    </div>
-
-    <div class="blister">
-        <div class="icon affinity">img</div>
-        <div class="icon photoshop"></div>
-        <div class="icon illustrator"></div>
-
-        <div class="icon figma"></div>
-        <div class="icon scribble"></div>
-        <div class="icon midjourney"></div>
-
-        <div class="icon dots"></div>
-        <div class="icon pixellab"></div>
-        <div class="icon canva"></div>
-    </div>
-
-    <div class="sticker">
-        the apps
-    </div>
 
 </div>
           </div>
         </section>
 
         <section>
-          <span class="eyebrow">Nostalgic Letter</span>
+          <span class="eyebrow">Sobre mi</span>
           <div class="letter-card">
                       <div class="letter-note">
               Dear Reader,<br>
@@ -398,7 +382,83 @@ Lo que más me define: creatividad, disciplina y la obsesión por aprender siemp
         </section>
       </div>
     </section>
-  `);
+  <style>
+  .icon{
+    width:70px;
+    height:70px;
+    background:white;
+    border-radius:12px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:absolute;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.icon img{
+    width:65%;
+    height:65%;
+    object-fit:contain;
+    pointer-events:none;
+}
+
+.affinity{
+    top:45px;
+    left:40px;
+    transform:rotate(-8deg);
+}
+
+.photoshop{
+    top:35px;
+    left:160px;
+    transform:rotate(8deg);
+}
+
+.illustrator{
+    top:45px;
+    right:40px;
+    transform:rotate(-5deg);
+}
+
+.figma{
+    top:170px;
+    left:35px;
+    transform:rotate(-6deg);
+}
+
+.scribble{
+    top:165px;
+    left:165px;
+    transform:rotate(5deg);
+}
+
+.midjourney{
+    top:170px;
+    right:35px;
+    transform:rotate(-7deg);
+}
+
+.dots{
+    bottom:45px;
+    left:55px;
+    transform:rotate(-10deg);
+}
+
+.pixellab{
+    bottom:40px;
+    left:170px;
+    transform:rotate(2deg);
+}
+
+.canva{
+    bottom:40px;
+    right:45px;
+    transform:rotate(10deg);
+}
+`);
 }
 
 function renderSettings() {
@@ -413,7 +473,7 @@ function renderSettings() {
         <section class="settings-section">
           <label>Foto de perfil</label>
           <div class="avatar-preview">
-            <img src="${escapeHtml(profilePic)}" alt="Vista previa">
+            <img src="/src/assets/images/lol.png" alt="Vista previa">
           </div>
 
           <input id="fileInput" class="hidden" type="file" accept="image/*">

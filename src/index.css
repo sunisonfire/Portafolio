@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=La+Belle+Aurore&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Special+Elite&display=swap');
 @import "tailwindcss";
-
-@theme {
+.root {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-handwritten: 'La Belle Aurore', 'Caveat', cursive;
@@ -382,4 +381,3 @@
   background-color: #303030;
   opacity: 12%;
 }
-
