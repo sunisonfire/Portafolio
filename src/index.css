@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=La+Belle+Aurore&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Special+Elite&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-handwritten: 'La Belle Aurore', 'Caveat', cursive;
+  --font-typewriter: 'Special Elite', 'Courier Prime', monospace;
+
+  /* Custom timing function */
+  --ease-page: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+:root {
+  --paper-white: #fffdf8;
+  --paper-cream: #fff7e8;
+  --banana: #ead46b;
+  --banana-soft: #f5e7a6;
+  --radicchio: #6f1728;
+  --radicchio-deep: #431826;
+  --terracotta: #a64c32;
+  --oxblood: #3a111a;
+  --ink: #21171a;
+  --line: #eadfce;
+}
+
+/* Base style resets and scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(111, 23, 40, 0.22);
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(234, 212, 107, 0.18);
+}
+
+/* 3D Page Flip Animation Styles */
+.perspective-container {
+  perspective: 1600px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* The pages during transition */
+.transition-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* --- FORWARD TRANSITION (Collage -> Archive -> Diary) --- */
+.page-flip-forward-exit {
+  animation: flipForwardExit 0.9s var(--ease-page) forwards;
+  transform-origin: left center;
+  z-index: 20;
+}
+
+.page-flip-forward-enter {
+  animation: flipForwardEnter 0.9s var(--ease-page) forwards;
+  transform-origin: right center;
+  z-index: 10;
+}
+
+/* --- BACKWARD TRANSITION (Diary -> Archive -> Collage) --- */
+.page-flip-backward-exit {
+  animation: flipBackwardExit 0.9s var(--ease-page) forwards;
+  transform-origin: right center;
+  z-index: 20;
+}
+
+.page-flip-backward-enter {
+  animation: flipBackwardEnter 0.9s var(--ease-page) forwards;
+  transform-origin: left center;
+  z-index: 10;
+}
+
+@keyframes flipForwardExit {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  40% {
+    filter: brightness(0.7);
+  }
+  100% {
+    transform: rotateY(-90deg) translateX(-100%);
+    opacity: 0;
+    filter: brightness(0.3);
+  }
+}
+
+@keyframes flipForwardEnter {
+  0% {
+    transform: rotateY(90deg) translateX(100%);
+    opacity: 0;
+    filter: brightness(0.3);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(0deg) translateX(0);
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+@keyframes flipBackwardExit {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  40% {
+    filter: brightness(0.7);
+  }
+  100% {
+    transform: rotateY(90deg) translateX(100%);
+    opacity: 0;
+    filter: brightness(0.3);
+  }
+}
+
+@keyframes flipBackwardEnter {
+  0% {
+    transform: rotateY(-90deg) translateX(-100%);
+    opacity: 0;
+    filter: brightness(0.3);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(0deg) translateX(0);
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+/* Scrapbook specific details */
+.notebook-paper-lines {
+  background-image: linear-gradient(rgba(111, 23, 40, 0.08) 1px, transparent 1px);
+  background-size: 100% 2rem;
+}
+.dark .notebook-paper-lines {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.notebook-paper-grid {
+  background-image: 
+    linear-gradient(rgba(111, 23, 40, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 23, 40, 0.045) 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem;
+}
+.dark .notebook-paper-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Folder tab styling for the "files" look */
+.folder-clip-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Soft polaroid shadow */
+.polaroid-shadow {
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15), -1px 2px 4px rgba(0, 0, 0, 0.05);
+}
+.dark .polaroid-shadow {
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.4), -1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Washi tape details */
+.washi-tape {
+  background-color: rgba(245, 231, 166, 0.55);
+  backdrop-filter: blur(0.5px);
+  border-left: 2px dashed rgba(111, 23, 40, 0.16);
+  border-right: 2px dashed rgba(111, 23, 40, 0.16);
+}
+
+.washi-tape-floral {
+  background-image: radial-gradient(rgba(111, 23, 40, 0.35) 10%, transparent 20%),
+                    radial-gradient(rgba(234, 212, 107, 0.42) 15%, transparent 25%);
+  background-size: 10px 10px;
+  background-color: rgba(255, 247, 232, 0.75);
+  backdrop-filter: blur(1px);
+  border-left: 2px dashed rgba(111, 23, 40, 0.18);
+  border-right: 2px dashed rgba(111, 23, 40, 0.18);
+}
+
+.washi-tape-pink {
+  background-color: rgba(111, 23, 40, 0.16);
+  backdrop-filter: blur(0.5px);
+  border-left: 1px dashed rgba(111, 23, 40, 0.22);
+  border-right: 1px dashed rgba(111, 23, 40, 0.22);
+}
+
+.washi-tape-sparkle {
+  background-color: rgba(234, 212, 107, 0.55);
+  background-image: radial-gradient(white 8%, transparent 10%),
+                    radial-gradient(#6f1728 12%, transparent 15%);
+  background-size: 8px 8px;
+  backdrop-filter: blur(0.5px);
+}
+
+/* Floating particles for home page */
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(40px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.floating-particle {
+  position: absolute;
+  pointer-events: none;
+  background-color: rgba(234, 212, 107, 0.28);
+  border-radius: 50%;
+  animation: floatParticle 18s linear infinite;
+}
+.dark .floating-particle {
+  background-color: rgba(234, 212, 107, 0.18);
+}
+
+/* Butterfly simple CSS animation */
+@keyframes flutter {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(70deg);
+  }
+}
+.butterfly-wing-left {
+  transform-origin: right center;
+  animation: flutter 0.25s infinite ease-in-out;
+}
+.butterfly-wing-right {
+  transform-origin: left center;
+  animation: flutter 0.25s infinite ease-in-out;
+}
+
+/* Google Sign-In Button official styles */
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  background-color: WHITE;
+  background-image: none;
+  border: 1px solid #747775;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  letter-spacing: 0.25px;
+  outline: none;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 0.218s, 0.218s, 0.218s;
+  transition-timing-function: ease, ease, ease;
+  transition-delay: 0s, 0s, 0s;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  max-width: 400px;
+  min-width: min-content;
+}
+
+.gsi-material-button .gsi-material-button-icon {
+  height: 20px;
+  margin-right: 12px;
+  min-width: 20px;
+  width: 20px;
+}
+
+.gsi-material-button .gsi-material-button-content-wrapper {
+  -webkit-align-items: center;
+  align-items: center;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.gsi-material-button .gsi-material-button-contents {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  font-family: 'Special Elite', 'Courier Prime', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.gsi-material-button .gsi-material-button-state {
+  -webkit-transition: opacity .218s;
+  transition: opacity .218s;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.gsi-material-button:disabled {
+  cursor: default;
+  background-color: #ffffff61;
+  border-color: #1f1f1f1f;
+}
+
+.gsi-material-button:disabled .gsi-material-button-contents {
+  color: #1f1f1f1f;
+}
+
+.gsi-material-button:disabled .gsi-material-button-icon {
+  opacity: 30%;
+}
+
+.gsi-material-button:not(:disabled):hover {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.30), 0 1px 3px 1px rgba(60,64,67,.15);
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.30), 0 1px 3px 1px rgba(60,64,67,.15);
+}
+
+.gsi-material-button:not(:disabled):hover .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 8%;
+}
+
+.gsi-material-button:not(:disabled):focus {
+  border-color: #4285f4;
+  outline: none;
+}
+
+.gsi-material-button:not(:disabled):focus .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 12%;
+}
+
+.gsi-material-button:not(:disabled):active .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 12%;
+}
+

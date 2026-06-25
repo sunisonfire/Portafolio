@@ -1,0 +1,6 @@
+{
+  "name": "Postfolio Diario Digital",
+  "description": "Una bitácora artística y nostálgica con collage interactivo, carpeta de archivos estilo scrapbook y transiciones de páginas de diario.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
